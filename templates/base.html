@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<title>E-LIBRARY</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col jumbotron bg-transparent">
+				<h1>
+					Welcome to E-Library..
+				</h1>
+			</div>
+
+	{% block content %}
+
+
+	{% endblock content %}
+
+		</div>
+	</div>
+
+<script>
+	let fields = document.querySelectorAll('input');
+
+	for(let field in fields) {
+		fields[field].className = " form-control"
+	}
+</script>
+
+</body>
+</html>

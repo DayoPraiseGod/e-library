@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="col-md">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="text-center">E-Library Login</h3>
+			</div>
+			<div class="card-body">
+				<form method="POST" action="">
+				   {% csrf_token %}
+
+				   <label for="username">Username</label>
+				   <input type="text" name="username" id="username">
+				   <br>
+
+				   <label for="password">Password</label>
+				   <input type="password" name="password" id="password">
+				   <br>
+					
+				   <button class="btn btn-primary btn-block" type="submit">Login</button>
+				</form>
+				<br>
+				<p>Don't have account?<a href="{% url 'register' %}"> Register Here.</a></p>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}

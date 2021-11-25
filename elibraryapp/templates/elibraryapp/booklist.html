@@ -1,0 +1,120 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+	{% if user.is_authenticated %}
+
+	<style>
+	body {
+		background-image: url('../images/bg.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		margin-top: 5px;
+		width: 100%;
+		height: 100vh;
+	}
+	
+		img {
+			width: 150px;
+			height: 100px;
+		}
+
+		table, tr {
+			width: 100%;
+			height: 80px;
+			margin: 10px;
+			border-bottom: 2px solid #ddd;
+		}
+
+		td {
+			padding: 10px;
+		}
+
+		td:nth-child(1) {
+			width: 150px;
+		}
+
+		@media only screen and (max-width: 770px) {
+			.read {
+				position: relative;
+				display: block;
+			}
+		}
+	</style>
+
+		{% include 'navbar.html' %}
+
+
+<!-- 
+	{% for book in books %}
+
+		<div class="container">
+
+			<div class="row">
+
+					<div class="col-md-3">
+						<div class="card">
+							<div class="card card-body">
+								<img src="{{ book.cover_pic.url }}">
+							</div>
+							<div class="card-header">
+								<h3>{{ book.title | title }}</h3>
+								<span><cite>By {{ book.author }}</cite></span>
+								<h6>ISBN: {{ book.isbn }}</h6>
+								<em><p>{{ book.about | slice:50 }}</p></em>
+								<cite>Pages: {{ book.pages }}</cite>
+							</div>
+						</div>
+					</div>
+
+			</div>
+
+		</div>
+
+	{% endfor %}
+ -->
+
+ <div class="container">
+ 	
+	<table>
+
+		{% for book in books %}
+
+		<tr>
+			<a href="{{ book.book_file }}" target="_blank">
+			<td>
+				<div class="card card-body">
+					<img src="{{ book.cover_pic.url }}">
+				</div>
+			</td>
+			</a>
+			<td>
+				<div style="position: relative;" class="card-header">
+					<h3>{{ book.title | title }}</h3>
+					<span><cite>By {{ book.author }}</cite></span>
+					<h6>ISBN: {{ book.isbn }}</h6>
+					<em><p>{{ book.about | slice:50 }}</p></em>
+					<cite>Pages: {{ book.pages }}</cite>
+					<div style="float: right; position: absolute; top: 65px; right: 15px"><a class="btn btn-success read" href="#" target="_blank">Read</a></div>
+				</div>
+			</td>
+		</tr>
+
+		
+
+		{% endfor %}
+
+	</table>
+
+
+ </div>
+
+	
+
+	{% endif %}
+
+{% endblock content %}

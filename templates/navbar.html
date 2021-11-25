@@ -1,0 +1,32 @@
+	
+	<style>
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 5px 30px;
+			position: sticky;
+			top: 0;
+			margin-bottom: 10px;
+			z-index: 1000;
+		}
+
+	</style>
+
+	<nav class="navbar navbar-expand-sm bg-dark text-white">
+
+		<div class="logo">
+			<h2>E-library</h2>
+		</div>
+
+	  <!-- Links -->
+	  <ul class="navbar-nav">
+	    <li class="nav-item">
+	      <h3>Hello, {{ user.username | title }}</h3>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link btn btn-success ml-5" href="{% url 'logout' %}">Logout</a>
+	    </li>
+	  </ul>
+
+	</nav>
