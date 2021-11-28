@@ -5,13 +5,38 @@
 
 {% include 'navbar.html' %}
 
-<form method="POST" action="" enctype="multipart/form-data">
-	{% csrf_token %}
+<style>
+	body {
+		background: linear-gradient(#dd1290, #2020de);
+	}
 
-	{{form.as_p}}
+	.center {
+		max-width: 40%;
+		margin: 20px auto;
+	}
+</style>
 
-	<button type="submit">Upload</button>
+<div class="center card card-body">
+	<a href="{% url 'crud' %}" class="btn btn-secondary btn-block">Book List</a>
+	<div class="card card-header">
+		<h1 class="text-center">Book Upload</h1>
+	</div>
+	<form method="POST" action="" enctype="multipart/form-data">
+		{% csrf_token %}
 
-</form>
+		{{form.as_p}}
+
+		<button type="submit" class="btn btn-primary btn-block btn-lg">Upload</button>
+
+	</form>
+
+</div>
+
+	<script>
+		let fields = document.querySelectorAll('input');
+		for (let field in fields) {
+			fields[field].className = " form-control";
+		}
+	</script>
 
 {% endblock content %}

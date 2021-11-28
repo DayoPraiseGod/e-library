@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<form method="POST" action="">
+	{% csrf_token %}
+
+	<h3>Delete <em>{{ book.title | title }}</em>?</h3>
+	
+	<a href="{% url 'crud' %}" class="btn btn-secondary">Cancel</a>
+	<input type="submit" value="Delete" class="btn btn-danger">
+</form>
+
+{% endblock content %}

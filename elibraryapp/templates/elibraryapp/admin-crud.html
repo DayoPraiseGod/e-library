@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<style>
+	table {
+		margin-top: 30px;
+	}
+
+	tr {
+		border-bottom: 1px dashed; #202020;
+	}
+
+	th {
+		text-align: center;
+		background-color: #aaa;
+		color: #fff;
+		padding: 5px;
+	}
+
+	td {
+		padding: 10px;
+	}
+</style>
+
+<div class="container">
+
+	<a href="{% url 'admin' %}" class="btn btn-success btn-block btn-lg">Upload Books</a>
+
+	<table>
+		<tr>
+			<th colspan="4">
+				<h1>Book List</h1>
+			</th>
+		</tr>
+		{% for book in books %}
+		<tr>
+			<td style="width: 1000px"><h3>{{ book.title | title }}</h3></td>
+			<td>
+				<a href="{% url 'booklist' %}" class="btn btn-primary">View</a>
+			</td>
+			<td><a href="{% url 'edit' book.id %}" class="btn btn-info">Edit</a></td>
+			<td><a href="{% url 'delete' book.id %}" class="btn btn-danger">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+</div>
+
+{% endblock content %}

@@ -56,6 +56,37 @@ def admin_upload(request):
 		form = UploadBookForm(request.POST, request.FILES)
 		if form.is_valid:
 			form.save()
-			return redirect('booklist')
+			return redirect('crud')
 	context = {'form':form}
 	return render(request, 'elibraryapp/admin.html', context)
+
+@login_required
+def read(request):
+	return render(request, 'elibraryapp/read.html')
+
+@login_required
+def crud(request):
+	books = Books.objects.all().order_by('-id')
+	context = {'books':books}
+	return render(request, 'elibraryapp/admin-crud.html', context)
+
+@login_required
+def edit(request, pk):
+	book = Books.objects.get(id=pk)
+	form = UploadBookForm(instance=book)
+	if request.method == 'POST':
+		form = UploadBookForm(request.POST, request.FILES, instance=book)
+		if form.is_valid():
+			form.save()
+			return redirect('crud')
+	context = {'form':form}
+	return render(request, 'elibraryapp/admin.html', context)
+
+@login_required
+def delete(request, pk):
+	book = Books.objects.get(id=pk)
+	if request.method == 'POST':
+		book.delete()
+		return redirect('crud')
+	context = {'book':book}
+	return render(request, 'elibraryapp/delete.html', context)

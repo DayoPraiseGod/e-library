@@ -1,3 +1,4 @@
+
 {% extends 'main.html' %}
 {% load static %}
 
@@ -49,35 +50,6 @@
 		{% include 'navbar.html' %}
 
 
-<!-- 
-	{% for book in books %}
-
-		<div class="container">
-
-			<div class="row">
-
-					<div class="col-md-3">
-						<div class="card">
-							<div class="card card-body">
-								<img src="{{ book.cover_pic.url }}">
-							</div>
-							<div class="card-header">
-								<h3>{{ book.title | title }}</h3>
-								<span><cite>By {{ book.author }}</cite></span>
-								<h6>ISBN: {{ book.isbn }}</h6>
-								<em><p>{{ book.about | slice:50 }}</p></em>
-								<cite>Pages: {{ book.pages }}</cite>
-							</div>
-						</div>
-					</div>
-
-			</div>
-
-		</div>
-
-	{% endfor %}
- -->
-
  <div class="container">
  	
 	<table>
@@ -88,7 +60,9 @@
 			<a href="{{ book.book_file }}" target="_blank">
 			<td>
 				<div class="card card-body">
-					<img src="{{ book.cover_pic.url }}">
+					<a href="{{ book.cover_pic.url }}" target="_blank">
+						<img src="{{ book.cover_pic.url }}">
+					</a>
 				</div>
 			</td>
 			</a>
@@ -99,7 +73,7 @@
 					<h6>ISBN: {{ book.isbn }}</h6>
 					<em><p>{{ book.about | slice:50 }}</p></em>
 					<cite>Pages: {{ book.pages }}</cite>
-					<div style="float: right; position: absolute; top: 65px; right: 15px"><a class="btn btn-success read" href="#" target="_blank">Read</a></div>
+					<div style="float: right; position: absolute; top: 65px; right: 15px"><a class="btn btn-success read" href="{{ book.book_file.url }}" target="_blank">Read</a></div>
 				</div>
 			</td>
 		</tr>
