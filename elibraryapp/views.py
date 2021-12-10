@@ -45,7 +45,6 @@ def logout_page(request):
 @login_required
 def booklist(request):
 	books = Books.objects.all().order_by('-id')
-	print(books[0].book_file.path)
 	context = {'books':books}
 	return render(request, 'elibraryapp/booklist.html', context)
 

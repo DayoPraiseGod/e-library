@@ -1,0 +1,62 @@
+[
+    {
+        "id": 2,
+        "book_file": "/media/__Result_Slip.pdf",
+        "title": "king author",
+        "author": "PraiseGod",
+        "about": "nice book indeed...",
+        "pages": "12",
+        "isbn": "65516845161616",
+        "cover_pic": "/media/freecodecamp-20210904-0003.jpg"
+    },
+    {
+        "id": 3,
+        "book_file": "/media/Learn_C_Programming_C_Programming_Language__TutorialsPoint__PDFDrive_.pdf",
+        "title": "Learn C Programming",
+        "author": "Tutorials Points",
+        "about": "C is a general-purpose, procedural, imperative computer programming language\r\ndeveloped in 1972 by Dennis M. Ritchie at the Bell Telephone Laboratories to\r\ndevelop the UNIX operating system.",
+        "pages": "185",
+        "isbn": "9752646316664",
+        "cover_pic": "/media/Untitled.png"
+    },
+    {
+        "id": 4,
+        "book_file": "/media/Python_Programming.pdf",
+        "title": "Python Programming",
+        "author": "Adam Stewart",
+        "about": "Getting started in coding can be tough. You may have looked at a few of the\r\nmost popular coding languages, such as C++ or Java and been a bit scared by\r\nwhat you saw",
+        "pages": "115",
+        "isbn": "6846515381381",
+        "cover_pic": "/media/py.png"
+    },
+    {
+        "id": 5,
+        "book_file": "/media/Gifted_Hand..._Ben_Carson.pdf",
+        "title": "Gifted Hand",
+        "author": "Ben Carson",
+        "about": "This book\r\nis dedicated to my mother,\r\nSONYA CARSON,\r\nwho basically sacrificed her life\r\nto make certain that my brother and I\r\ngot a head start.",
+        "pages": "257",
+        "isbn": "9780310332909",
+        "cover_pic": "/media/ben.png"
+    },
+    {
+        "id": 6,
+        "book_file": "/media/Smart_Thinking.pdf",
+        "title": "Smart Thinking",
+        "author": "Mathew Allen",
+        "about": "The study and teaching of critical thinking (also known as informal logic) is\r\nrelatively rare in Australia. There is little to guide the keen student or teacher in the\r\ndevelopment of skills for analysis and reasoning in everyday work and study",
+        "pages": "207",
+        "isbn": "976195517334",
+        "cover_pic": "/media/think.png"
+    },
+    {
+        "id": 8,
+        "book_file": "/media/books_file/django.pdf",
+        "title": "django",
+        "author": "PraiseGod",
+        "about": "kjwhhhe dlwjiheiodj3 dxoi3h8x3r4 co8o3uourf8oeur8ouf8orfe rfeorjf8oerjoferfjoerofjerf erfoerufoerjf",
+        "pages": "2034",
+        "isbn": "9780310332909",
+        "cover_pic": "/media/dja.png"
+    }
+]

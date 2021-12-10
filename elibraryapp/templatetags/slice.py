@@ -8,6 +8,6 @@ def slice(value, arg):
 	"""
 	if len(value) <= 50:
 		return value
-	return value[:arg] + "..."
+	return str(value[:arg] + "...")
 
 register.filter('slice', slice)
